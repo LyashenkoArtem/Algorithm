@@ -9,12 +9,11 @@
 import random
 
 m = random.randint(0, 100)
-a = False
 i = 10
 
 print('Загадано число от 0 до 100, какое?')
 
-while a == False and i > 0:
+while i > 0:
     n = int(input('Введите число: '))
 
     if n == m:
@@ -23,10 +22,9 @@ while a == False and i > 0:
         s = input('Еще раз? Y/N: ')
         if s == 'y' or s == 'Y' or s == 'н' or s == 'Н':
             m = random.randint(0, 100)
-            a = False
             i = 10
         else:
-            a = True
+            i = 0
     else:
         i -= 1
         if n > m:
@@ -37,5 +35,5 @@ while a == False and i > 0:
             print('Ваше число МЕНЬШЕ')
             print('Осталось попыток', i)
             print('')
-if a == False:
+if i == 0:
     print(f'Вы не угадали! Загаданное число: {m}')
