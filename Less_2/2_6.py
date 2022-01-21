@@ -12,15 +12,17 @@ m = random.randint(0, 100)
 a = False
 i = 10
 
+print('Загадано число от 0 до 100, какое?')
+
 while a == False and i > 0:
-    print('Загадано число от 0 до 100, какое?')
     n = int(input('Введите число: '))
 
     if n == m:
         print('Вы угадали!')
 
         s = input('Еще раз? Y/N: ')
-        if s == 'y' or s == 'Y':
+        if s == 'y' or s == 'Y' or s == 'н' or s == 'Н':
+            m = random.randint(0, 100)
             a = False
             i = 10
         else:
